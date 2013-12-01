@@ -1,0 +1,855 @@
+fileFormatVersion: 2
+guid: 92f4e46603ef04034895e312f67dbcf7
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 25
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mega Man X_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 311
+        width: 8
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 311
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 311
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 311
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 311
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_6
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 311
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_10
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_11
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 311
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_12
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 311
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 273
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 273
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 272
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_16
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 272
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 273
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_18
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 273
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_19
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 273
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 272
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_21
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 273
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_22
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 273
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_23
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 273
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_24
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 233
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_25
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 232
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_26
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 232
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_27
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 233
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_28
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 233
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_29
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 233
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_30
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 232
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_31
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 233
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_32
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 233
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_33
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 233
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_34
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 189
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_35
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 185
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_36
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 182
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 183
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_38
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 182
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_39
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 185
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_40
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 189
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_41
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 189
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_42
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 185
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_43
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 182
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_44
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 183
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_45
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 182
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_46
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 185
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_47
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 189
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 135
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 135
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 136
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_51
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 136
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 135
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_53
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 135
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_54
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 135
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_55
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 136
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_56
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 136
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_57
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 135
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_58
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 135
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_59
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 135
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_60
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 71
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_61
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_62
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 68
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_63
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 68
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_64
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 64
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_65
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 65
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_66
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 61
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_67
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 66
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_68
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 73
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 73
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_70
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 73
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_71
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 73
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_72
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 73
+        width: 31
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_73
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 73
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_74
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 8
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_75
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 7
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_76
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 8
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_77
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 7
+        width: 48
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_78
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 8
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_79
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 8
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_80
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 8
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_81
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 8
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_82
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 8
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_83
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 8
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_84
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 8
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_85
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 24
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_86
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 23
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_87
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 23
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_88
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Mega Man X_89
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 20
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
