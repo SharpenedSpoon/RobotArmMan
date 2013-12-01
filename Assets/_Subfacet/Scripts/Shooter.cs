@@ -6,7 +6,7 @@ public class Shooter : MonoBehaviour {
 
 	public float scl = 0.65f;
 	public float RateOfFire = 1.0f;
-	public Rigidbody2D bullet = null;
+	public GameObject bullet = null;
 
 	private float _shootTimer = 0.0f;
 	private Movement _movement = null;
@@ -30,21 +30,18 @@ public class Shooter : MonoBehaviour {
 		}
 	}
 
-	public void Shoot(int dir = 1) {
+	public void Shoot(int dir) {
 		if (bullet != null && _shootTimer >= RateOfFire) {
 			_shootTimer = 0.0f;
 			
 			// ----- Spawn bullet
 			GameObject thisBullet = Instantiate(bullet, transform.position + 0.65f*dir*transform.right, Quaternion.identity) as GameObject;
-			
-			// ----- Match bullet facing to player
-			if (thisBullet != null) {
-				var thisBulletScript = thisBullet.GetComponent<Bullet>();
-				if (thisBulletScript != null) {
-					thisBulletScript.ShootInDirection(dir);
-					thisBulletScript.OwnerTag = gameObject.tag;
-                }
-            }
+			Bullet bulletScript = thisBullet.GetComponent<Bullet>();
+			if (bulletScript != null) {
+				//bulletScript.Direction = _movement.Direction;
+				bulletScript.ShootInDirection(_movement.Direction);
+				bulletScript.OwnerTag = gameObject.tag;
+			}
         }
     }
 }

@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour {
 	public float Speed = 10.0f;
 	[HideInInspector]
 	public bool IsFacingRight = true;
-	[HideInInspector]
 	public int Direction = 1;
 
 	public void Move(int horizontalDirection) {

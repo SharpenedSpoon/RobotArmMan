@@ -10,13 +10,19 @@ public class Bullet : MonoBehaviour {
 
 	[HideInInspector]
 	public string OwnerTag = "Player";
-	[HideInInspector]
-	public int Direction = 1;
+	public int Direction = 0;
+	public bool FacingRight;
 	private float _lifeTimer = 0.0f;
 	private Health _health = null;
 	
 	void Start () {
 		_health = GetComponent<Health>();
+		/*Direction = FacingRight ? 1 : -1;
+		if (Direction != 0) {
+			rigidbody2D.velocity = transform.right * Speed * Direction;
+		}*/
+
+		//rigidbody2D.velocity = transform.right * Speed * Direction;
 	}
 
 	void Update () {
@@ -28,6 +34,10 @@ public class Bullet : MonoBehaviour {
 
 	public void ShootInDirection(int dir) {
 		rigidbody2D.velocity = transform.right * Speed * dir;
+	}
+
+	public void SetFacingRight(bool facingRightInput) {
+		FacingRight = facingRightInput;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
