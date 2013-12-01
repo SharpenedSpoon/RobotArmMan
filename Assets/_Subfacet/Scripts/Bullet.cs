@@ -1,47 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet : MyGameObject {
+public class Bullet : MonoBehaviour {
 
 	public int Damage = 1;
 	public float Lifetime = 20.0f;
 	public bool DestroyOnHit = true;
+	public float Speed = 10.0f;
 
 	[HideInInspector]
 	public string OwnerTag = "Player";
 	[HideInInspector]
-	private int _horizontalDirection = 1;
+	public int Direction = 1;
 	private float _lifeTimer = 0.0f;
+	private Health _health = null;
 	
 	void Start () {
-		GameObject player = GameObject.Find("Player");
-		if (player != null) {
-			IsFacingRight = player.GetComponent<MyGameObject>().IsFacingRight;
-		}
-		if (IsFacingRight) {
-			_horizontalDirection = 1;
-		} else {
-			_horizontalDirection = -1;
-		}
-
-		rigidbody2D.velocity = transform.right * Speed * _horizontalDirection;
+		_health = GetComponent<Health>();
 	}
 
 	void Update () {
 		_lifeTimer += Time.deltaTime;
 		if (_lifeTimer >= Lifetime) {
-			Die();
+			_health.Die();
 		}
+	}
+
+	public void ShootInDirection(int dir) {
+		rigidbody2D.velocity = transform.right * Speed * dir;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (!col.gameObject.CompareTag(OwnerTag)) {
 			if (col.gameObject != null) {
-				Debug.Log (col.gameObject.name);
-				col.gameObject.SendMessage("TakeDamage", 1);
+				var healthScript = col.gameObject.GetComponent<Health>();
+				if (healthScript != null) {
+					healthScript.TakeDamage(1);
+				}
 			}
 			if (DestroyOnHit) {
-				Die();
+				_health.Die();
 			}
 		}
 	}
