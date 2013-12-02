@@ -16,10 +16,10 @@ public class BulletNetworked : MonoBehaviour {
 	public bool FacingRight;
 	
 	private float _lifeTimer = 0.0f;
-	private Health _health = null;
+	private HealthNetworked _health = null;
 	
 	void Start () {
-		_health = GetComponent<Health>();
+		_health = GetComponent<HealthNetworked>();
 	}
 	
 	void Update () {

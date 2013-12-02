@@ -2,13 +2,17 @@
 using System.Collections;
 
 public class Matchmaker : MonoBehaviour {
+
+	private GameObject player = null;
 	
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
 
 	void Update () {
-	
+		if (Input.GetKeyDown(KeyCode.R) && player == null) {
+			SpawnPlayer();
+		}
 	}
 
 	void OnGUI() {
@@ -26,8 +30,12 @@ public class Matchmaker : MonoBehaviour {
 	}
 
 	void OnJoinedRoom() {
+		SpawnPlayer();
+	}
+
+	public void SpawnPlayer() {
 		// This will create a player that shows up for everyone connected
-		GameObject player = PhotonNetwork.Instantiate("PlayerNetworked", Vector3.zero, Quaternion.identity, 0);
+		player = PhotonNetwork.Instantiate("PlayerNetworked", Vector3.zero, Quaternion.identity, 0);
 		// Now set the local player to be controllable
 		player.GetComponent<PlayerNetworked>().ActiveLocalPlayer = true;
 	}
