@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Bullet.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/PlayerCharacter.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/PlayerCharacter.cs" Line="59" Column="3" />
-      <File FileName="Assets/_Subfacet/Scripts/Bullet.cs" Line="19" Column="23" />
+      <File FileName="Assets/_Subfacet/Scripts/PlayerCharacter.cs" Line="46" Column="4" />
+      <File FileName="Assets/_Subfacet/Scripts/Bullet.cs" Line="22" Column="36" />
       <File FileName="Assets/_Subfacet/Scripts/Health.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/Shooter.cs" Line="9" Column="31" />
+      <File FileName="Assets/_Subfacet/Scripts/Shooter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

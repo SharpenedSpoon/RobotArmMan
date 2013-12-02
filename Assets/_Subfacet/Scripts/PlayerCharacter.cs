@@ -25,7 +25,8 @@ public class PlayerCharacter : MonoBehaviour {
 		AnimationBools.Add("Running", false);
 		AnimationBools.Add("Shooting", false);
 		AnimationBools.Add("Jumping", false);
-	}
+		AnimationBools.Add("Falling", false);
+    }
 
 	void Update () {
 		// ----- Get the input for movement
@@ -41,11 +42,16 @@ public class PlayerCharacter : MonoBehaviour {
 
 		// ----- Apply movement
 		_movement.Move(hor);
-		if (hor != 0) {
+		_movement.Jump(ver);
+        if (hor != 0) {
 			AnimationBools["Running"] = true;
 		}
 		if (ver != 0) {
-			transform.position += ver * _movement.Speed * Time.deltaTime * transform.up; // vertical movement for debugging
+			//transform.position += ver * _movement.Speed * Time.deltaTime * transform.up; // vertical movement for debugging
+			//AnimationBools["Jumping"] = true;
+		}
+
+		if (ver == 1) {
 			AnimationBools["Jumping"] = true;
 		}
 
