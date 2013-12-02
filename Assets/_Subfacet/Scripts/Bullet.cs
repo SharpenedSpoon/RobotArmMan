@@ -10,8 +10,11 @@ public class Bullet : MonoBehaviour {
 
 	[HideInInspector]
 	public string OwnerTag = "Player";
+	[HideInInspector]
 	public int Direction = 0;
+	[HideInInspector]
 	public bool FacingRight;
+
 	private float _lifeTimer = 0.0f;
 	private Health _health = null;
 	

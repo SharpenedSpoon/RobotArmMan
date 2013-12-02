@@ -4,8 +4,9 @@ using Vectrosity;
 
 public class Shooter : MonoBehaviour {
 
-	public float scl = 0.65f;
-	public float RateOfFire = 1.0f;
+	public float sclRight = 0.69f;
+	public float sclUp = 0.09f;
+	public float RateOfFire = 0.2f;
 	public GameObject bullet = null;
 
 	private float _shootTimer = 0.0f;
@@ -22,10 +23,10 @@ public class Shooter : MonoBehaviour {
 		// ----- Draw from whence the shot will come
 		if (_movement != null) {
 				var test = new Vector3[4];
-				test[0] = transform.position;
-				test[1] = transform.position + scl*_movement.Direction*transform.right;
-				test[2] = transform.position + scl*_movement.Direction*transform.right + new Vector3(0.0f,0.2f,0.0f);
-				test[3] = transform.position + scl*_movement.Direction*transform.right + new Vector3(0.0f,-0.2f,0.0f);
+				test[0] = transform.position + sclUp*transform.up;
+				test[1] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right;
+				test[2] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right + new Vector3(0.0f,0.2f,0.0f);
+				test[3] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right + new Vector3(0.0f,-0.2f,0.0f);
 				Vectrosity.VectorLine.SetLine3D(Color.green, 0.01f, test);
 		}
 	}
@@ -35,7 +36,7 @@ public class Shooter : MonoBehaviour {
 			_shootTimer = 0.0f;
 			
 			// ----- Spawn bullet
-			GameObject thisBullet = Instantiate(bullet, transform.position + 0.65f*dir*transform.right, Quaternion.identity) as GameObject;
+			GameObject thisBullet = Instantiate(bullet, transform.position + 0.69f*dir*transform.right + 0.09f*transform.up, Quaternion.identity) as GameObject;
 			Bullet bulletScript = thisBullet.GetComponent<Bullet>();
 			if (bulletScript != null) {
 				//bulletScript.Direction = _movement.Direction;
