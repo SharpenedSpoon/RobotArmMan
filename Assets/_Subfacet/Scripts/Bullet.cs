@@ -20,12 +20,6 @@ public class Bullet : MonoBehaviour {
 	
 	void Start () {
 		_health = GetComponent<Health>();
-		/*Direction = FacingRight ? 1 : -1;
-		if (Direction != 0) {
-			rigidbody2D.velocity = transform.right * Speed * Direction;
-		}*/
-
-		//rigidbody2D.velocity = transform.right * Speed * Direction;
 	}
 
 	void Update () {
