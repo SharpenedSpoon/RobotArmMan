@@ -34,27 +34,14 @@ public class PlayerCharacter : MonoBehaviour {
 		int ver = 0;
 		if (Input.GetKey(KeyCode.LeftArrow))  { hor -= 1; }
 		if (Input.GetKey(KeyCode.RightArrow)) { hor += 1; }
-		if (Input.GetKey(KeyCode.DownArrow))  { ver -= 1; }
-		if (Input.GetKey(KeyCode.UpArrow))    { ver += 1; }
+		//if (Input.GetKey(KeyCode.DownArrow))  { ver -= 1; }
+		if (Input.GetKeyDown(KeyCode.UpArrow))    { ver += 1; }
 
 		// ----- Reset animation states
 		ResetAnimationStates();
 
 		// ----- Apply movement
-		_movement.Move(hor);
-		_movement.Jump(ver);
-        if (hor != 0) {
-			AnimationBools["Running"] = true;
-		}
-		if (ver != 0) {
-			//transform.position += ver * _movement.Speed * Time.deltaTime * transform.up; // vertical movement for debugging
-			//AnimationBools["Jumping"] = true;
-		}
-
-		if (ver == 1) {
-			AnimationBools["Jumping"] = true;
-		}
-
+		_movement.SetMovementVariables(hor, ver);
 
 		// ----- Shoot stuff
 		if (Input.GetKey(KeyCode.Z)) {
@@ -62,6 +49,7 @@ public class PlayerCharacter : MonoBehaviour {
 			AnimationBools["Shooting"] = true;
 		}
 
+		// ----- Figure out and pass the animation bools
 		HandleAnimation();
 	}
 
@@ -69,12 +57,29 @@ public class PlayerCharacter : MonoBehaviour {
 		AnimationBools["Running"]  = false;
 		AnimationBools["Shooting"] = false;
 		AnimationBools["Jumping"]  = false;
+		AnimationBools["Falling"]  = false;
 	}
 
 	public void HandleAnimation() {
-		// ----- Basic animation handling. Let's do this better later.
+		float velX = rigidbody2D.velocity.x;
+		float velY = rigidbody2D.velocity.y;
+
+		if (_movement.HorizontalMovement != 0) {
+			AnimationBools["Running"] = true;
+		}
+
+		if (Mathf.Abs(velY) > 0.2) {
+			if (velY > 0) {
+				AnimationBools["Jumping"] = true;
+			} else if (velY < 0) {
+				AnimationBools["Falling"] = true;
+			}
+		}
+
 		_anim.SetBool("Running",  AnimationBools["Running"]);
 		_anim.SetBool("Shooting", AnimationBools["Shooting"]);
 		_anim.SetBool("Jumping",  AnimationBools["Jumping"]);
+		_anim.SetBool("Falling",  AnimationBools["Falling"]);
+		_anim.SetBool("OnGround", _movement.OnGround);
 	}
 }

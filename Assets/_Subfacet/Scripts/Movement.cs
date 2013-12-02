@@ -5,13 +5,19 @@ using Vectrosity;
 public class Movement : MonoBehaviour {
 	
 	public float Speed = 10.0f;
-	public float JumpForce = 500.0f;
+	public float jumpForce = 550.0f;
 	public bool OnGround = true;
 	
 	[HideInInspector]
 	public bool IsFacingRight = true;
 	[HideInInspector]
 	public int Direction = 1;
+	[HideInInspector]
+	public int HorizontalMovement = 0;
+	[HideInInspector]
+	public bool CanJump = false;
+	[HideInInspector]
+	public bool Jump = false;
 	private RaycastHit2D hit;
 
 	public bool IsFalling { get; private set; }
@@ -22,20 +28,44 @@ public class Movement : MonoBehaviour {
 		IsJumping = false;
 	}
 
+	void FixedUpdate() {
+		if (HorizontalMovement != 0) {
+			//rigidbody2D.AddForce(Vector2.right * HorizontalMovement * moveForce);
+			Move(HorizontalMovement);
+		}
+		if (Jump && CanJump) {
+			rigidbody2D.AddForce(new Vector2(0.0f, jumpForce));
+			CanJump = false;
+			Jump = false;
+		}
+	}
+
 	void Update() {
 		CheckOnGround();
 	}
 
 	public void CheckOnGround() {
 		OnGround = false;
+		CanJump = false;
 		Vector3 endPoint = transform.position - (0.85f * transform.up);
 		if (Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer) )) {
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0.0f);
 			OnGround = true;
+			CanJump = true;
 			IsFalling = false;
 			IsJumping = false;
 		}
 
 		DebugDrawGroundCheck(endPoint);
+	}
+
+	public void SetMovementVariables(int hor, int ver) {
+		HorizontalMovement = hor;
+		if (ver == 1) {
+			Jump = true;
+		} else {
+			Jump = false;
+		}
 	}
 
 	public void Move(int horizontalDirection) {
@@ -54,9 +84,11 @@ public class Movement : MonoBehaviour {
 		transform.position += horizontalDirection * Speed * Time.deltaTime * transform.right;
 	}
 
-	public void Jump(int ver) {
-		if (ver == 1 && OnGround) {
-			rigidbody2D.AddForce(500.0f * transform.up);
+	public void DoJump(int ver) {
+		if (ver == 1) {
+			//rigidbody2D.AddForce(500.0f * transform.up);
+			//rigidbody2D.velocity += new Vector2(0.0f, 10.0f);
+			OnGround = false;
 		}
 	}
 
