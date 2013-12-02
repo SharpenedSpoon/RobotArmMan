@@ -49,7 +49,6 @@ public class Movement : MonoBehaviour {
 		CanJump = false;
 		Vector3 endPoint = transform.position - (0.85f * transform.up);
 		if (Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer) )) {
-			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0.0f);
 			OnGround = true;
 			CanJump = true;
 			IsFalling = false;
