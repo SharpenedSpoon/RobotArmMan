@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour {
 	[HideInInspector]
 	public string OwnerTag = "Player";
 	[HideInInspector]
+	public GameObject OwnerObject = null;
+	[HideInInspector]
 	public int Direction = 0;
 	[HideInInspector]
 	public bool FacingRight;
@@ -38,13 +40,16 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (!col.gameObject.CompareTag(OwnerTag)) {
-			if (col.gameObject != null) {
-				var healthScript = col.gameObject.GetComponent<Health>();
-				if (healthScript != null) {
-					healthScript.TakeDamage(1);
+		if (col.gameObject != OwnerObject) {
+			//if (!col.gameObject.CompareTag(OwnerTag)) {
+				if (col.gameObject != null) {
+					var healthScript = col.gameObject.GetComponent<Health>();
+					if (healthScript != null) {
+						healthScript.TakeDamage(1);
+					}
 				}
-			}
+			//}
+
 			if (DestroyOnHit) {
 				_health.Die();
 			}

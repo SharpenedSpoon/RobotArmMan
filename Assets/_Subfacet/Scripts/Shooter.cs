@@ -42,6 +42,7 @@ public class Shooter : MonoBehaviour {
 				//bulletScript.Direction = _movement.Direction;
 				bulletScript.ShootInDirection(_movement.Direction);
 				bulletScript.OwnerTag = gameObject.tag;
+				bulletScript.OwnerObject = gameObject;
 			}
         }
     }

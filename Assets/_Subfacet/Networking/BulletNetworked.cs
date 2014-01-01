@@ -40,7 +40,7 @@ public class BulletNetworked : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		//if (!col.gameObject.CompareTag(OwnerTag)) {
 			if (col.gameObject != null) {
-				var healthScript = col.gameObject.GetComponent<Health>();
+				var healthScript = col.gameObject.GetComponent<HealthNetworked>();
                 if (healthScript != null) {
                     healthScript.TakeDamage(1);
                 }

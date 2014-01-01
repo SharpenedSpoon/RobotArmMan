@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour {
 	public float Speed = 10.0f;
 	public float jumpForce = 550.0f;
 	public bool OnGround = true;
+
+	public bool standOnOwnLayer = false;
 	
 	[HideInInspector]
 	public bool IsFacingRight = true;
@@ -48,7 +50,22 @@ public class Movement : MonoBehaviour {
 		OnGround = false;
 		CanJump = false;
 		Vector3 endPoint = transform.position - (0.85f * transform.up);
-		if (Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer) )) {
+
+		if (standOnOwnLayer) {
+			int realLayer = gameObject.layer;
+			gameObject.layer = 2; // layer 2 is the "ignore raycast" layer
+			hit = Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer));
+			gameObject.layer = realLayer;
+
+			if (hit && hit.collider.gameObject == gameObject) {
+				Debug.Log ("quit hitting yourself!");
+				standOnOwnLayer = false;
+			}
+
+		} else {
+			hit = Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer));
+		}
+		if (hit) {
 			OnGround = true;
 			CanJump = true;
 			IsFalling = false;
@@ -111,7 +128,7 @@ public class Movement : MonoBehaviour {
 
 	public void DebugDrawGroundCheck(Vector3 endPoint) {
 		Color groundColor = Color.red;
-		if (Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer) )) {
+		if (OnGround) {
 			groundColor = Color.green;
 		}
 		var blah = new Vector3[2];

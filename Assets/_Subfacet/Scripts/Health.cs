@@ -6,6 +6,8 @@ public class Health : MonoBehaviour {
 	public int MaxHealth = 10;
 	public int HP { get; private set; }
 
+	public ParticleSystem deathEffect = null;
+
 	void Start() {
 		HP = MaxHealth;
 	}
@@ -25,7 +27,10 @@ public class Health : MonoBehaviour {
 	}
 
 	public void Die() {
-		Debug.Log(gameObject.name + " is dying.");
+		//Debug.Log(gameObject.name + " is dying.");
+		if (deathEffect != null) {
+			Instantiate(deathEffect, transform.position, Quaternion.identity);
+		}
 		Destroy(gameObject);
 	}
 }
