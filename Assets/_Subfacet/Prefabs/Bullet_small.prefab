@@ -72,6 +72,8 @@ MonoBehaviour:
   Lifetime: 104.93
   DestroyOnHit: 1
   Speed: 20
+  stunOnHit: 1
+  stunTimeMilliseconds: 1000
   OwnerTag: Player
   OwnerObject: {fileID: 0}
   Direction: 0

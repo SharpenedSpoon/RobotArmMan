@@ -8,6 +8,9 @@ public class PlayerCharacter : MonoBehaviour {
 	private Health _health = null;
 	private Shooter _shooter = null;
 
+	private bool isStunned = false;
+	private float endStunTime = 0.0f;
+
 	private Animator _anim;
 	public Dictionary<string, bool> AnimationBools = new Dictionary<string, bool>();
 
@@ -32,10 +35,18 @@ public class PlayerCharacter : MonoBehaviour {
 		// ----- Get the input for movement
 		int hor = 0;
 		int ver = 0;
-		if (Input.GetKey(KeyCode.LeftArrow))  { hor -= 1; }
-		if (Input.GetKey(KeyCode.RightArrow)) { hor += 1; }
-		//if (Input.GetKey(KeyCode.DownArrow))  { ver -= 1; }
-		if (Input.GetKeyDown(KeyCode.UpArrow))    { ver += 1; }
+
+		if (!isStunned) {
+			if (Input.GetKey(KeyCode.LeftArrow))  { hor -= 1; }
+			if (Input.GetKey(KeyCode.RightArrow)) { hor += 1; }
+			//if (Input.GetKey(KeyCode.DownArrow))  { ver -= 1; }
+			if (Input.GetKeyDown(KeyCode.UpArrow))    { ver += 1; }
+		} else {
+			// check to see if we're not stunned anymore
+			if (Time.time >= endStunTime) {
+				Unstun();
+			}
+		}
 
 		// ----- Reset animation states
 		ResetAnimationStates();
@@ -53,6 +64,21 @@ public class PlayerCharacter : MonoBehaviour {
 		HandleAnimation();
 	}
 
+	public void Stun() {
+		Stun(1.0f);
+	}
+	
+	public void Stun(float stunTime) {
+		isStunned = true;
+		endStunTime = Time.time + stunTime;
+		_anim.SetBool("Stunned", true);
+	}
+    
+    public void Unstun() {
+		isStunned = false;
+		_anim.SetBool("Stunned", false);
+    }
+    
 	public void ResetAnimationStates() {
 		AnimationBools["Running"]  = false;
 		AnimationBools["Shooting"] = false;

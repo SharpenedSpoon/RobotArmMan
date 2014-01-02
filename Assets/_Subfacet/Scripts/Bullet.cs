@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour {
 	public float Lifetime = 20.0f;
 	public bool DestroyOnHit = true;
 	public float Speed = 20.0f;
+	public bool stunOnHit = false;
+	public float stunTimeMilliseconds = 1000.0f;
 
 	[HideInInspector]
 	public string OwnerTag = "Player";
@@ -46,6 +48,9 @@ public class Bullet : MonoBehaviour {
 					var healthScript = col.gameObject.GetComponent<Health>();
 					if (healthScript != null) {
 						healthScript.TakeDamage(1);
+					}
+					if (stunOnHit) {
+						col.gameObject.SendMessage("Stun", stunTimeMilliseconds, SendMessageOptions.DontRequireReceiver);
 					}
 				}
 			//}
