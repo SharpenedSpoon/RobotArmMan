@@ -278,6 +278,10 @@ Prefab:
       propertyPath: gridSize
       value: 1.27999997
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b8a58d069a8b2419fbfee50ed66e3a2b, type: 2}
+      propertyPath: levelFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 424cdcfe7bc6d4a56bb9768a002d4360, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8a58d069a8b2419fbfee50ed66e3a2b, type: 2}
   m_RootGameObject: {fileID: 1881859084}
@@ -314,6 +318,7 @@ MonoBehaviour:
   block: {fileID: 100000, guid: 57da8f3257e624891948619d6279d611, type: 2}
   player: {fileID: 100000, guid: a4400bece5ce04893ac4523882a9dd40, type: 2}
   gridSize: 1.27999997
+  levelFile: {fileID: 4900000, guid: 424cdcfe7bc6d4a56bb9768a002d4360, type: 3}
 --- !u!4 &1881859086
 Transform:
   m_ObjectHideFlags: 0
