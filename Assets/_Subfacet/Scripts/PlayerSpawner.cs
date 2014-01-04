@@ -10,6 +10,12 @@ public class PlayerSpawner : MonoBehaviour {
 	private List<GameObject> playerList = new List<GameObject>();
 	private GameObject currentPlayer = null;
 
+	public new static PlayerSpawner active;
+
+	void Awake() {
+		active = this;
+	}
+
 	void Start () {
 		SpawnPlayer();
 	}
