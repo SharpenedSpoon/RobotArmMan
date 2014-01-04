@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ShooterNetworked : MonoBehaviour {
@@ -23,9 +23,9 @@ public class ShooterNetworked : MonoBehaviour {
 		if (_movement != null) {
 			var test = new Vector3[4];
 			test[0] = transform.position + sclUp*transform.up;
-			test[1] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right;
-			test[2] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right + new Vector3(0.0f,0.2f,0.0f);
-			test[3] = transform.position + sclUp*transform.up + sclRight*_movement.Direction*transform.right + new Vector3(0.0f,-0.2f,0.0f);
+			test[1] = transform.position + sclUp*transform.up + sclRight*_movement.direction*transform.right;
+			test[2] = transform.position + sclUp*transform.up + sclRight*_movement.direction*transform.right + new Vector3(0.0f,0.2f,0.0f);
+			test[3] = transform.position + sclUp*transform.up + sclRight*_movement.direction*transform.right + new Vector3(0.0f,-0.2f,0.0f);
 			Vectrosity.VectorLine.SetLine3D(Color.green, 0.01f, test);
 		}
 	}
@@ -39,7 +39,7 @@ public class ShooterNetworked : MonoBehaviour {
 			BulletNetworked bulletScript = thisBullet.GetComponent<BulletNetworked>();
 			if (bulletScript != null) {
                 //bulletScript.Direction = _movement.Direction;
-                bulletScript.ShootInDirection(_movement.Direction);
+                bulletScript.ShootInDirection(_movement.direction);
                 bulletScript.OwnerTag = gameObject.tag;
             }
         }

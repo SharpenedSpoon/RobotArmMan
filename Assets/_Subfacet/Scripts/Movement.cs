@@ -4,41 +4,41 @@ using Vectrosity;
 
 public class Movement : MonoBehaviour {
 	
-	public float Speed = 10.0f;
+	public float speed = 10.0f;
 	public float jumpForce = 550.0f;
-	public bool OnGround = true;
+	public bool onGround = true;
 
 	public bool standOnOwnLayer = false;
 	
 	[HideInInspector]
-	public bool IsFacingRight = true;
+	public bool isFacingRight = true;
 	[HideInInspector]
-	public int Direction = 1;
+	public int direction = 1;
 	[HideInInspector]
-	public int HorizontalMovement = 0;
+	public int horizontalMovement = 0;
 	[HideInInspector]
-	public bool CanJump = false;
+	public bool canJump = false;
 	[HideInInspector]
-	public bool Jump = false;
+	public bool jump = false;
 	private RaycastHit2D hit;
 
-	public bool IsFalling { get; private set; }
-	public bool IsJumping { get; private set; }
+	public bool isFalling { get; private set; }
+	public bool isJumping { get; private set; }
 
 	void Start() {
-		IsFalling = false;
-		IsJumping = false;
+		isFalling = false;
+		isJumping = false;
 	}
 
 	void FixedUpdate() {
-		if (HorizontalMovement != 0) {
+		if (horizontalMovement != 0) {
 			//rigidbody2D.AddForce(Vector2.right * HorizontalMovement * moveForce);
-			Move(HorizontalMovement);
+			Move(horizontalMovement);
 		}
-		if (Jump && CanJump) {
+		if (jump && canJump) {
 			rigidbody2D.AddForce(new Vector2(0.0f, jumpForce));
-			CanJump = false;
-			Jump = false;
+			canJump = false;
+			jump = false;
 		}
 	}
 
@@ -47,8 +47,8 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void CheckOnGround() {
-		OnGround = false;
-		CanJump = false;
+		onGround = false;
+		canJump = false;
 		Vector3 endPoint = transform.position - (0.85f * transform.up);
 
 		if (standOnOwnLayer) {
@@ -66,27 +66,27 @@ public class Movement : MonoBehaviour {
 			hit = Physics2D.Linecast(transform.position, endPoint, ~(1 << gameObject.layer));
 		}
 		if (hit) {
-			OnGround = true;
-			CanJump = true;
-			IsFalling = false;
-			IsJumping = false;
+			onGround = true;
+			canJump = true;
+			isFalling = false;
+			isJumping = false;
 		}
 
 		DebugDrawGroundCheck(endPoint);
 	}
 
 	public void SetMovementVariables(int hor, int ver) {
-		HorizontalMovement = hor;
+		horizontalMovement = hor;
 		if (ver == 1) {
-			Jump = true;
+			jump = true;
 		} else {
-			Jump = false;
+			jump = false;
 		}
 	}
 
 	public void Move(int horizontalDirection) {
 		if (horizontalDirection == 0) {
-			return;
+			//return; // we don't want to return if we are telling rigidbody2d what our velocity is
 		}
 		
 		// ----- Figure out which way we're facing
@@ -97,38 +97,39 @@ public class Movement : MonoBehaviour {
 		}
 
 		// ----- Apply movement
-		transform.position += horizontalDirection * Speed * Time.deltaTime * transform.right;
+		//transform.position += horizontalDirection * Speed * Time.deltaTime * transform.right;
+		rigidbody2D.velocity = new Vector2(horizontalDirection * speed, rigidbody2D.velocity.y);
 	}
 
 	public void DoJump(int ver) {
 		if (ver == 1) {
 			//rigidbody2D.AddForce(500.0f * transform.up);
 			//rigidbody2D.velocity += new Vector2(0.0f, 10.0f);
-			OnGround = false;
+			onGround = false;
 		}
 	}
 
 	public void Flip() {
-		IsFacingRight = IsFacingRight ? false : true;
-		Direction = IsFacingRight ? 1 : -1;
+		isFacingRight = isFacingRight ? false : true;
+		direction = isFacingRight ? 1 : -1;
 		transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
 	}
 	
 	public void FaceLeft() {
-		if (IsFacingRight) {
+		if (isFacingRight) {
 			Flip();
 		}
 	}
 	
 	public void FaceRight() {
-		if (!IsFacingRight) {
+		if (!isFacingRight) {
 			Flip();
 		}
 	}
 
 	public void DebugDrawGroundCheck(Vector3 endPoint) {
 		Color groundColor = Color.red;
-		if (OnGround) {
+		if (onGround) {
 			groundColor = Color.green;
 		}
 		var blah = new Vector3[2];

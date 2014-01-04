@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -59,7 +59,7 @@ public class PlayerNetworked : MonoBehaviour {
 		
 		// ----- Shoot stuff
 		if (IsShooting) {
-			_shooter.Shoot(_movement.Direction);
+			_shooter.Shoot(_movement.direction);
 			AnimationBools["Shooting"] = true;
 		}
 		
@@ -98,7 +98,7 @@ public class PlayerNetworked : MonoBehaviour {
 	public void HandleAnimation() {
 		float velY = rigidbody2D.velocity.y;
 		
-		if (_movement.HorizontalMovement != 0) {
+		if (_movement.horizontalMovement != 0) {
 			AnimationBools["Running"] = true;
 		}
 		
@@ -114,6 +114,6 @@ public class PlayerNetworked : MonoBehaviour {
 		_anim.SetBool("Shooting", AnimationBools["Shooting"]);
 		_anim.SetBool("Jumping",  AnimationBools["Jumping"]);
 		_anim.SetBool("Falling",  AnimationBools["Falling"]);
-		_anim.SetBool("OnGround", _movement.OnGround);
+		_anim.SetBool("OnGround", _movement.onGround);
 	}
 }

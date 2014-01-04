@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
 
 	private float _lifeTimer = 0.0f;
 	private Health _health = null;
-	
+
 	void Start () {
 		_health = GetComponent<Health>();
 	}
