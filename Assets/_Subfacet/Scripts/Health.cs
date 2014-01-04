@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 
-	public int MaxHealth = 10;
+	public int maxHealth = 10;
 	public int HP { get; private set; }
 
 	public ParticleSystem deathEffect = null;
 
 	void Start() {
-		HP = MaxHealth;
+		HP = maxHealth;
 	}
 
 	void Update() {
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour {
 	}
 
 	public void GainHealth(int hlh) {
-		HP = Mathf.Min(HP + hlh, MaxHealth);
+		HP = Mathf.Min(HP + hlh, maxHealth);
 	}
 
 	public void Die() {

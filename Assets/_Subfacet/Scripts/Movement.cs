@@ -9,32 +9,31 @@ public class Movement : MonoBehaviour {
 	public bool onGround = true;
 
 	public bool standOnOwnLayer = false;
-	
-	[HideInInspector]
-	public bool isFacingRight = true;
-	[HideInInspector]
-	public int direction = 1;
-	[HideInInspector]
-	public int horizontalMovement = 0;
-	[HideInInspector]
-	public bool canJump = false;
-	[HideInInspector]
-	public bool jump = false;
+
+	public bool isFacingRight { get; private set; }
+	public int direction { get; private set; }
+	public int horizontalMovement { get; private set; }
+	public bool canJump { get; private set; }
+	public bool jump { get; private set; }
 	private RaycastHit2D hit;
 
 	public bool isFalling { get; private set; }
 	public bool isJumping { get; private set; }
 
-	void Start() {
+	void Awake() {
+		isFacingRight = true;
+		direction = 1;
+		horizontalMovement = 0;
+		canJump = false;
+		jump = false;
 		isFalling = false;
 		isJumping = false;
 	}
 
 	void FixedUpdate() {
-		if (horizontalMovement != 0) {
-			//rigidbody2D.AddForce(Vector2.right * HorizontalMovement * moveForce);
+		//if (horizontalMovement != 0) { // if setting rigidbody2d velocity manually, we always want to be setting it.
 			Move(horizontalMovement);
-		}
+		//}
 		if (jump && canJump) {
 			rigidbody2D.AddForce(new Vector2(0.0f, jumpForce));
 			canJump = false;

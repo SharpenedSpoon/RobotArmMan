@@ -4,23 +4,23 @@ using System.Collections.Generic;
 
 public class PlayerCharacter : MonoBehaviour {
 
-	private Movement _movement = null;
-	private Health _health = null;
-	private Shooter _shooter = null;
+	private Movement movement = null;
+	private Health health = null;
+	private Shooter shooter = null;
 
 	private bool isStunned = false;
 	private float endStunTime = 0.0f;
 
-	private Animator _anim;
+	private Animator anim;
 	public Dictionary<string, bool> AnimationBools = new Dictionary<string, bool>();
 
 
 	void Start () {
-		_movement = GetComponent<Movement>();
-		_health = GetComponent<Health>();
-		_shooter = GetComponent<Shooter>();
-		_anim = GetComponent<Animator>();
-		if (_movement == null || _health == null || _shooter == null || _anim == null) {
+		movement = GetComponent<Movement>();
+		health = GetComponent<Health>();
+		shooter = GetComponent<Shooter>();
+		anim = GetComponent<Animator>();
+		if (movement == null || health == null || shooter == null || anim == null) {
 			Debug.Log("WTF bro? Add all components first. - Hugs and Kisses, " + gameObject.name);
 			Destroy(gameObject);
 		}
@@ -52,11 +52,11 @@ public class PlayerCharacter : MonoBehaviour {
 		ResetAnimationStates();
 
 		// ----- Apply movement
-		_movement.SetMovementVariables(hor, ver);
+		movement.SetMovementVariables(hor, ver);
 
 		// ----- Shoot stuff
 		if (Input.GetKey(KeyCode.Z)) {
-			_shooter.Shoot(_movement.Direction);
+			shooter.Shoot(movement.direction);
 			AnimationBools["Shooting"] = true;
 		}
 
@@ -71,12 +71,12 @@ public class PlayerCharacter : MonoBehaviour {
 	public void Stun(float stunTime) {
 		isStunned = true;
 		endStunTime = Time.time + stunTime;
-		_anim.SetBool("Stunned", true);
+		anim.SetBool("Stunned", true);
 	}
     
     public void Unstun() {
 		isStunned = false;
-		_anim.SetBool("Stunned", false);
+		anim.SetBool("Stunned", false);
     }
     
 	public void ResetAnimationStates() {
@@ -90,7 +90,7 @@ public class PlayerCharacter : MonoBehaviour {
 		float velX = rigidbody2D.velocity.x;
 		float velY = rigidbody2D.velocity.y;
 
-		if (_movement.HorizontalMovement != 0) {
+		if (movement.horizontalMovement != 0) {
 			AnimationBools["Running"] = true;
 		}
 
@@ -102,10 +102,10 @@ public class PlayerCharacter : MonoBehaviour {
 			}
 		}
 
-		_anim.SetBool("Running",  AnimationBools["Running"]);
-		_anim.SetBool("Shooting", AnimationBools["Shooting"]);
-		_anim.SetBool("Jumping",  AnimationBools["Jumping"]);
-		_anim.SetBool("Falling",  AnimationBools["Falling"]);
-		_anim.SetBool("OnGround", _movement.OnGround);
+		anim.SetBool("Running",  AnimationBools["Running"]);
+		anim.SetBool("Shooting", AnimationBools["Shooting"]);
+		anim.SetBool("Jumping",  AnimationBools["Jumping"]);
+		anim.SetBool("Falling",  AnimationBools["Falling"]);
+		anim.SetBool("OnGround", movement.onGround);
 	}
 }
