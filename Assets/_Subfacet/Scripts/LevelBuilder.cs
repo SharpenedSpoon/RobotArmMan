@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 public class LevelBuilder : MonoBehaviour {
@@ -56,6 +57,7 @@ public class LevelBuilder : MonoBehaviour {
 
 		int currentRow = worldStringArray.Length;
 		int currentCol = 0;
+		List<char> validCharacters = new List<char> {'0', '1', 'P'};
 		foreach (string row in worldStringArray) {
 			currentCol = 0;
 			foreach (char ch in row) {
@@ -65,7 +67,9 @@ public class LevelBuilder : MonoBehaviour {
 				} else if (ch == 'P') {
 					PlayerSpawner.active.spawnPosition = GridToWorld(currentRow, currentCol);
 				}
-				currentCol++;
+				if (validCharacters.Contains(ch)) {
+					currentCol++;
+				}
 			}
 			currentRow--;
 		}

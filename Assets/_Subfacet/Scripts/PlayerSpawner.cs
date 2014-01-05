@@ -8,12 +8,13 @@ public class PlayerSpawner : MonoBehaviour {
 	public Vector3 spawnPosition = new Vector3(-7.0f, 1.2f, 0.0f);
 
 	private List<GameObject> playerList = new List<GameObject>();
-	private GameObject currentPlayer = null;
+	public GameObject currentPlayer { get; private set; }
 
 	public new static PlayerSpawner active;
 
 	void Awake() {
 		active = this;
+		currentPlayer = null;
 	}
 
 	void Start () {

@@ -1,14 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/LevelBuilder.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/debugscript.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/Bullet.cs" Line="23" Column="17" />
-      <File FileName="Assets/_Subfacet/Scripts/Movement.cs" Line="106" Column="25" />
-      <File FileName="Assets/_Subfacet/Scripts/Shooter.cs" Line="11" Column="2" />
-      <File FileName="Assets/_Subfacet/Scripts/PlayerCharacter.cs" Line="14" Column="19" />
-      <File FileName="Assets/_Subfacet/Scripts/Health.cs" Line="6" Column="22" />
-      <File FileName="Assets/_Subfacet/Scripts/PlayerSpawner.cs" Line="7" Column="27" />
-      <File FileName="Assets/_Subfacet/Scripts/LevelBuilder.cs" Line="25" Column="21" />
+      <File FileName="Assets/debugscript.cs" Line="23" Column="32" />
+      <File FileName="Assets/_Subfacet/Scripts/Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/Movement.cs" Line="100" Column="91" />
+      <File FileName="Assets/_Subfacet/Scripts/Shooter.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/PlayerCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/Health.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/PlayerSpawner.cs" Line="17" Column="24" />
+      <File FileName="Assets/_Subfacet/Scripts/LevelBuilder.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
